@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/main_banner"
+
+        android:layout_alignParentTop="true"
+        android:layout_gravity="top"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/popay_banner"
+        />
+
+    <android.support.design.widget.TabLayout
+        android:layout_below="@id/main_banner"
+        android:id="@+id/sliding_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="fill_horizontal"
+        app:tabMaxWidth="0dp"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        android:drawSelectorOnTop="true"/>
+
+    <android.support.v4.view.ViewPager
+        android:layout_below="@id/sliding_tabs"
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+</RelativeLayout>
