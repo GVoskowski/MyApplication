@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -23,7 +22,7 @@ public class CoffeeFragment extends Fragment {
     ListItemSelection activityCommander;
 
     public interface ListItemSelection {
-        void addToList(String name, String price);
+        void addToList(Past someOrderedItem);
     }
 
     @Override
@@ -65,12 +64,9 @@ public class CoffeeFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                TextView pName = (TextView) view.findViewById(R.id.default_text_view);
-                TextView pPrice = (TextView) view.findViewById(R.id.price_text_view);
-                String productName = pName.getText().toString();
-                String productPrice = pPrice.getText().toString();
-                itemSelected(productName, productPrice);
-                return;
+                Past past = (Past) adapterView.getItemAtPosition(position);
+                itemSelected(past);
+
 
                 //Toast.makeText(getActivity(), "Item clicked", Toast.LENGTH_SHORT).show();
 
@@ -83,8 +79,8 @@ public class CoffeeFragment extends Fragment {
         return rootView;
     }
 
-    public void itemSelected(String name, String price) {
-        activityCommander.addToList(name, price);
+    public void itemSelected(Past order) {
+        activityCommander.addToList(order);
 
 
     }

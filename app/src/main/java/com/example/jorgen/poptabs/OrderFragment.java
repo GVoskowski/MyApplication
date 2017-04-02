@@ -24,10 +24,7 @@ public class OrderFragment extends Fragment {
 
 
         View rootView = inflater.inflate(R.layout.word_list, container, false);
-        ArrayList<Past> pasts = new ArrayList<>();
-
-
-        pasts.add(new Past(selectedItemname, selectedItemprice));
+        ArrayList<Past> pasts = ((MainActivity)getActivity()).getOrders();
 
 
         ListView listView = (ListView) rootView.findViewById(R.id.word_list);

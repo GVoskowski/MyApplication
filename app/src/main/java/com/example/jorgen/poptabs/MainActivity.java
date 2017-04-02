@@ -5,25 +5,29 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements CoffeeFragment.ListItemSelection {
     OrderFragment orderuFragment;
-
+    ArrayList<Past> orders;
     //This gets clicked when user selects an item from CoffeeFragment
     @Override
-    public void addToList(String name, String price) {
-        orderuFragment =new OrderFragment();
-        orderuFragment.showSelectedItems(name, price);
-            return;
+    public void addToList(Past order) {
+
+        orders.add(order);
 
 
-
+    }
+    public ArrayList<Past> getOrders()
+    {
+        return orders;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        orders = new ArrayList<>();
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
