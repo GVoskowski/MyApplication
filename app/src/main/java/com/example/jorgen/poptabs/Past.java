@@ -1,10 +1,11 @@
 package com.example.jorgen.poptabs;
-
 /**
  * Created by Jorgen on 3/21/2017.
+ *
+ *
+ *
  */
-
-public class Word {
+public class Past {
 
     //Default name of product
     private String mProductName;
@@ -19,20 +20,18 @@ public class Word {
 
     private static final int NO_IMAGE_PROVIDED = -1;
 //Constructor for productName with Image
-    public Word(String defaultName,String ingredients,String productPrice,int imageResourceId ){
+    public Past(String defaultName, String ingredients, String productPrice, int imageResourceId ){
         mProductName = defaultName;
         mProductPrice = productPrice;
         mImageResourceId = imageResourceId;
         mIngredients = ingredients;
 
     }
-
-    public Word (String productPrice){
-
+    public Past(String defaultName, String productPrice){
+        mProductName = defaultName;
         mProductPrice = productPrice;
-
-
     }
+
 
     //get the productName
     public String getProductName(){

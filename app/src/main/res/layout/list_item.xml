@@ -34,6 +34,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Menu"
         android:textColor="#000"
         tools:text="one" />
+
         <TextView
             android:id="@+id/ingredients_text_view"
             android:layout_height="wrap_content"

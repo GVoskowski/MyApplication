@@ -9,37 +9,39 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class CategoryAdapter extends FragmentPagerAdapter {
 
-    private String tabTitles[] = new String[] { "Home", "Food","Coffee +"};
+    private String tabTitles[] = new String[] { "Home", "Food","Coffee +","Basket"};
+
+
 
     public CategoryAdapter(FragmentManager fm) {
         super(fm);
     }
     @Override
     public android.support.v4.app.Fragment getItem(int position) {
+
         if(position == 0) {
-            return new HomeFragment();}
+            return new HomeFragment();
+                }
 
 
         else if (position == 1){
             return new FoodFragment();}
-
-        /*  else if (position == 2) {
-            return new FamilyFragment();
-        }
-*/
-       else {
+        else if (position == 2){
             return new CoffeeFragment();}
+
+
+       else {
+            return new OrderFragment();}
 
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        // Generate title based on item position
         return tabTitles[position];
     }
 
