@@ -7,8 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements CoffeeFragment.ListItemSelection {
-    OrderFragment orderuFragment;
+public class MainActivity extends AppCompatActivity implements ListItemSelection {
     ArrayList<Past> orders;
     //This gets clicked when user selects an item from CoffeeFragment
     @Override

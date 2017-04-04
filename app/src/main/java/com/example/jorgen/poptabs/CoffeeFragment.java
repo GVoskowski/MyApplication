@@ -21,9 +21,7 @@ public class CoffeeFragment extends Fragment {
 
     ListItemSelection activityCommander;
 
-    public interface ListItemSelection {
-        void addToList(Past someOrderedItem);
-    }
+
 
     @Override
     public void onAttach(Context context) {

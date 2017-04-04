@@ -1,6 +1,7 @@
 package com.example.jorgen.poptabs;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,7 +17,20 @@ import java.util.ArrayList;
  */
 
 public class FoodFragment extends Fragment {
+    ListItemSelection activityCommander;
 
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            activityCommander = (ListItemSelection) context;
+
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString());
+        }
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,10 +55,9 @@ public class FoodFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                //TODO
-                /*FIND HOW TO SEND onItemClicked ITEMS TO ORDERFRAGMENT
-                 *IN ORDER TO  MAKE A 'WISHLIST' FOR USERS SELECTED ITEMS
-                 */
+
+                Past past = (Past) adapterView.getItemAtPosition(position);
+                itemSelected(past);
 
 
             }
@@ -52,5 +65,10 @@ public class FoodFragment extends Fragment {
         });
 
         return rootView;
+    }
+    public void itemSelected(Past order) {
+        activityCommander.addToList(order);
+
+
     }
 }
