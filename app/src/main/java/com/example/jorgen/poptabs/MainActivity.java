@@ -14,45 +14,33 @@ import android.view.View;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements ListItemSelection {
-    public static String FACEBOOK_URL = "https://www.facebook.com/popay.erg/";
-    public static String FACEBOOK_PAGE_ID = "467992566553817";
+    public static final String FACEBOOK_URL = "https://www.facebook.com/popay.erg/";
+    public static final String FACEBOOK_PAGE_ID = "467992566553817";
     ArrayList<Past> orders;
 
     //This gets clicked when user selects an item from CoffeeFragment
     @Override
     public void addToList(Past order) {
-
         orders.add(order);
-
-
     }
-
     public ArrayList<Past> getOrders() {
         return orders;
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         orders = new ArrayList<>();
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-
         // Find the view pager that will allow the user to swipe between fragments
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-
         // Create an adapter that knows which fragment should be shown on each page
         CategoryAdapter adapter = new CategoryAdapter(getSupportFragmentManager());
-
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
-
         // Give the TabLayout the ViewPager
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
-
-
     }
     public void onClickInsta(View v) {
         Uri uri = Uri.parse("http://instagram.com/_u/popay.erg");
@@ -60,13 +48,10 @@ public class MainActivity extends AppCompatActivity implements ListItemSelection
         i.setPackage("com.instagram.android");
         try {
             startActivity(i);
-
         } catch (ActivityNotFoundException e) {
-
             startActivity(new Intent(Intent.ACTION_VIEW,
                     Uri.parse("http://instagram.com/popay.erg")));
         }
-
     }
     public String getFacebookPageURL(Context context) {
         PackageManager packageManager = context.getPackageManager();
@@ -87,13 +72,11 @@ public class MainActivity extends AppCompatActivity implements ListItemSelection
         facebookIntent.setData(Uri.parse(facebookUrl));
         startActivity(facebookIntent);
     }
-
     public void onClickDial(View v) {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:" + "2130044491"));
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-
 }
 }

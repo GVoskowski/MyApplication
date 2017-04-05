@@ -1,61 +1,44 @@
 package com.example.jorgen.poptabs;
 
-/**
- * Created by Jorgen on 3/21/2017.
- */
-public class Past {
 
+class Past {
     //Default name of product
     private String mProductName;
-
     //Product Price
     private String mProductPrice;
     //product Ingredients
     private String mIngredients;
-
     //Image resource ID for product
     private int mImageResourceId = NO_IMAGE_PROVIDED;
-
     private static final int NO_IMAGE_PROVIDED = -1;
-
     //Constructor for productName with Image
-    public Past(String defaultName, String ingredients, String productPrice, int imageResourceId) {
+     Past(String defaultName, String ingredients, String productPrice, int imageResourceId) {
         mProductName = defaultName;
         mProductPrice = productPrice;
         mImageResourceId = imageResourceId;
         mIngredients = ingredients;
-
     }
-
     public Past(String defaultName, String productPrice) {
         mProductName = defaultName;
         mProductPrice = productPrice;
     }
-
-
     //get the productName
-    public String getProductName() {
+     String getProductName() {
         return mProductName;
     }
     //get product's price
-
-    public String getProductPrice() {
+    String getProductPrice() {
         return mProductPrice;
     }
-
-    public String getmIngredients() {
+    String getmIngredients() {
         return mIngredients;
     }
-
-
     //get the image resource Id
-    public int getImageResourceId() {
+    int getImageResourceId() {
         return mImageResourceId;
     }
-
     // check whether image resource id is provided or not
-    public boolean hasImage() {
+    boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
-
 }
