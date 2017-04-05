@@ -11,7 +11,6 @@ import android.support.v4.app.FragmentPagerAdapter;
     private static final String COFFEE = "Coffee+";
     private static final String BASKET = "Basket";
     private String tabTitles[] = new String[]{HOME, FOOD, COFFEE, BASKET};
-
     CategoryAdapter(FragmentManager fm) {
         super(fm);
     }
