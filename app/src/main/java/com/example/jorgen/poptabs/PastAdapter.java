@@ -64,4 +64,10 @@ public class PastAdapter extends ArrayAdapter<Past> {
         return listItemView;
 
     }
+
+    public void remove(int position) {
+        Past past_item = getItem(position);
+        remove(past_item);
+
+    }
 }

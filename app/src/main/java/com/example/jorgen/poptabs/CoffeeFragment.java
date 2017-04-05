@@ -22,7 +22,6 @@ public class CoffeeFragment extends Fragment {
     ListItemSelection activityCommander;
 
 
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -64,9 +63,6 @@ public class CoffeeFragment extends Fragment {
 
                 Past past = (Past) adapterView.getItemAtPosition(position);
                 itemSelected(past);
-
-
-                //Toast.makeText(getActivity(), "Item clicked", Toast.LENGTH_SHORT).show();
 
 
             }

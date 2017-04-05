@@ -1,9 +1,7 @@
 package com.example.jorgen.poptabs;
+
 /**
  * Created by Jorgen on 3/21/2017.
- *
- *
- *
  */
 public class Past {
 
@@ -19,31 +17,33 @@ public class Past {
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
     private static final int NO_IMAGE_PROVIDED = -1;
-//Constructor for productName with Image
-    public Past(String defaultName, String ingredients, String productPrice, int imageResourceId ){
+
+    //Constructor for productName with Image
+    public Past(String defaultName, String ingredients, String productPrice, int imageResourceId) {
         mProductName = defaultName;
         mProductPrice = productPrice;
         mImageResourceId = imageResourceId;
         mIngredients = ingredients;
 
     }
-    public Past(String defaultName, String productPrice){
+
+    public Past(String defaultName, String productPrice) {
         mProductName = defaultName;
         mProductPrice = productPrice;
     }
 
 
     //get the productName
-    public String getProductName(){
+    public String getProductName() {
         return mProductName;
     }
     //get product's price
 
-    public String getProductPrice(){
+    public String getProductPrice() {
         return mProductPrice;
     }
 
-    public String getmIngredients(){
+    public String getmIngredients() {
         return mIngredients;
     }
 
@@ -52,6 +52,7 @@ public class Past {
     public int getImageResourceId() {
         return mImageResourceId;
     }
+
     // check whether image resource id is provided or not
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;

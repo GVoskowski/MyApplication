@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="banner_dim_height">200dp</dimen>
+    <dimen name="tablayout_dim_height">40dp</dimen>
+    <dimen name="tab_max_width">0dp</dimen>
+    <dimen name="margin_left_right">8dp</dimen>
+    <dimen name="layout_width_list">100dp</dimen>
+    <dimen name="item_image_dim">40dp</dimen>
+    <dimen name="watermark_dim">400dp</dimen>
+</resources>

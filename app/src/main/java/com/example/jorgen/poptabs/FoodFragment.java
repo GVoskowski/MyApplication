@@ -20,7 +20,6 @@ public class FoodFragment extends Fragment {
     ListItemSelection activityCommander;
 
 
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -31,6 +30,7 @@ public class FoodFragment extends Fragment {
             throw new ClassCastException(context.toString());
         }
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -66,6 +66,7 @@ public class FoodFragment extends Fragment {
 
         return rootView;
     }
+
     public void itemSelected(Past order) {
         activityCommander.addToList(order);
 
