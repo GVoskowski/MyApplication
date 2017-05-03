@@ -84,4 +84,4 @@ public class MainActivity extends AppCompatActivity implements ListItemSelection
             startActivity(intent);
         }
     }
-
+}
