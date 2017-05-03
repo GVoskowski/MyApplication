@@ -16,6 +16,7 @@ class PastAdapter extends ArrayAdapter<Past> {
     PastAdapter(Activity context, ArrayList<Past> pasts) {
         super(context, 0, pasts);
     }
+
     @Override
     @NonNull
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
@@ -31,6 +32,7 @@ class PastAdapter extends ArrayAdapter<Past> {
         TextView ingredientsTextView = (TextView) listItemView.findViewById(R.id.ingredients_text_view);
         TextView priceTextView = (TextView) listItemView.findViewById(R.id.price_text_view);
         //gets the product name and price and set it to the text of those textViews
+        assert past_item != null;
         defaultTextView.setText(past_item.getProductName());
         ingredientsTextView.setText(past_item.getmIngredients());
         priceTextView.setText(past_item.getProductPrice());
@@ -46,6 +48,7 @@ class PastAdapter extends ArrayAdapter<Past> {
         }
         return listItemView;
     }
+
     void remove(int position) {
         Past past_item = getItem(position);
         remove(past_item);

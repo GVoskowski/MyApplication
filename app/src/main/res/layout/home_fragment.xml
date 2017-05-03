@@ -1,45 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".HomeFragment">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".HomeFragment">
+
+    <ImageView
+        android:id="@+id/watermark"
+        android:layout_width="@dimen/watermark_dim"
+        android:layout_height="@dimen/watermark_dim"
+
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/pop"
+        tools:ignore="ContentDescription"/>
+
+    <LinearLayout
+        android:id="@+id/informations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp8"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp8"
+        android:gravity="start"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/operating_hours"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp4"
+            android:layout_marginStart="@dimen/dp4"
+            android:text="@string/_7_00am_4_00pm"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/address"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp4"
+            android:layout_marginStart="@dimen/dp4"
+            android:text="@string/keiriadwn_50_katw_petralwna"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp4"
+            android:layout_marginStart="@dimen/dp4"
+            android:maxLines="2"
+            android:text="@string/breakfast_and_coffee_catering_delivery"
+            android:textSize="16sp"/>
+
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/social_media"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_image_dim"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp8"
         android:orientation="horizontal"
-        android:paddingBottom="@dimen/margin_left_right">
+        >
 
         <ImageView
             style="@style/SocialMedia"
             android:onClick="onClickDial"
-            android:src="@drawable/call" />
+            android:src="@drawable/call"
+            tools:ignore="ContentDescription"/>
 
         <ImageView
             style="@style/SocialMedia"
             android:onClick="onClickInsta"
-            android:src="@drawable/instagram" />
+            android:src="@drawable/instagram"
+            tools:ignore="ContentDescription"/>
 
         <ImageView
             style="@style/SocialMedia"
             android:onClick="onClickFcbk"
-            android:src="@drawable/facebook" />
+            android:src="@drawable/facebook"
+            tools:ignore="ContentDescription"/>
 
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/watermark"
-        android:layout_width="@dimen/watermark_dim"
-        android:layout_height="@dimen/watermark_dim"
-        android:layout_above="@id/social_media"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/pop" />
 
 
 </RelativeLayout>

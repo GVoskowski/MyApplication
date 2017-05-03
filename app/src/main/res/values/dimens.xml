@@ -7,4 +7,6 @@
     <dimen name="layout_width_list">100dp</dimen>
     <dimen name="item_image_dim">40dp</dimen>
     <dimen name="watermark_dim">400dp</dimen>
+    <dimen name="dp4">4dp</dimen>
+    <dimen name="dp8">8dp</dimen>
 </resources>

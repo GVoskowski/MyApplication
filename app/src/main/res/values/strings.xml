@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">PopTabs</string>
     <string name="list_item_txt_placeholder">one</string>
+    <string name="operating_hours">Operating Hours</string>
+    <string name="_7_00am_4_00pm">7:00AM - 4:00PM</string>
+    <string name="address">Address</string>
+    <string name="keiriadwn_50_katw_petralwna">Keiriadwn 50,Katw Petralwna</string>
+    <string name="description">Description</string>
+    <string name="breakfast_and_coffee_catering_delivery">Breakfast and Coffee,Catering,Delivery</string>
 
 
 </resources>

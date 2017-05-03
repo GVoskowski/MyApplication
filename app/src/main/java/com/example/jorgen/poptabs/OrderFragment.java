@@ -12,8 +12,11 @@ import java.util.ArrayList;
 
 
 public class OrderFragment extends Fragment {
-    private static String selectedItemname;
-    private static String selectedItemprice;
+    public static void showSelectedItems(String name, String price) {
+        String selectedItemname = name;
+        String selectedItemprice = price;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -29,9 +32,5 @@ public class OrderFragment extends Fragment {
             }
         });
         return rootView;
-    }
-    public static void showSelectedItems(String name, String price) {
-        selectedItemname = name;
-        selectedItemprice = price;
     }
 }

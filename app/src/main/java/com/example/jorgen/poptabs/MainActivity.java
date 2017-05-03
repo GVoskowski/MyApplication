@@ -9,23 +9,24 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements ListItemSelection {
-    public static final String FACEBOOK_URL = "https://www.facebook.com/popay.erg/";
-    public static final String FACEBOOK_PAGE_ID = "467992566553817";
-    ArrayList<Past> orders;
+    private static final String FACEBOOK_URL = "https://www.facebook.com/popay.erg/";
+    private static final String FACEBOOK_PAGE_ID = "467992566553817";
+    private ArrayList<Past> orders;
 
     //This gets clicked when user selects an item from CoffeeFragment
     @Override
     public void addToList(Past order) {
         orders.add(order);
     }
+
     public ArrayList<Past> getOrders() {
         return orders;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,8 @@ public class MainActivity extends AppCompatActivity implements ListItemSelection
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
     }
-    public void onClickInsta(View v) {
+
+    public void onClickInsta() {
         Uri uri = Uri.parse("http://instagram.com/_u/popay.erg");
         Intent i = new Intent(Intent.ACTION_VIEW, uri);
         i.setPackage("com.instagram.android");
@@ -53,7 +55,8 @@ public class MainActivity extends AppCompatActivity implements ListItemSelection
                     Uri.parse("http://instagram.com/popay.erg")));
         }
     }
-    public String getFacebookPageURL(Context context) {
+
+    private String getFacebookPageURL(Context context) {
         PackageManager packageManager = context.getPackageManager();
         try {
             int versionCode = packageManager.getPackageInfo("com.facebook.katana", 0).versionCode;
@@ -66,17 +69,19 @@ public class MainActivity extends AppCompatActivity implements ListItemSelection
             return FACEBOOK_URL; //normal web url
         }
     }
-    public void onClickFcbk(View v) {
+
+    public void onClickFcbk() {
         Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
         String facebookUrl = getFacebookPageURL(this);
         facebookIntent.setData(Uri.parse(facebookUrl));
         startActivity(facebookIntent);
     }
-    public void onClickDial(View v) {
+
+    public void onClickDial() {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:" + "2130044491"));
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-}
-}
+    }
+
